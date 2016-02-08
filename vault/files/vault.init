@@ -1,0 +1,92 @@
+#!/bin/bash
+#
+#       /etc/rc.d/init.d/vault
+#
+#       Daemonize the vault agent.
+#
+# chkconfig:   2345 95 20
+# description: Service discovery and configuration made easy. \
+#  Distributed, highly available, and datacenter-aware.
+# processname: vault
+# pidfile: /var/run/vault/pidfile
+
+# Source function library.
+. /etc/init.d/functions
+
+VAULT=/usr/local/bin/vault
+CONFIG=/etc/vault
+PID_FILE=/var/run/vault/vault.pid
+LOG_FILE=/var/log/vault
+
+[ -e /etc/sysconfig/vault ] && . /etc/sysconfig/vault
+
+export GOMAXPROCS=${GOMAXPROCS:-2}
+
+#
+# Create the /var/run/vault directory, which can live on a tmpfs
+# filesystem and be destroyed between reboots.
+#
+mkrundir() {
+        [ ! -d /var/run/vault ] && mkdir -p /var/run/vault
+        chown root /var/run/vault
+}
+
+start() {
+        echo -n "Starting vault: "
+        mkrundir
+        [ -f $PID_FILE ] && rm $PID_FILE
+        daemon --user=root \
+            --pidfile="$PID_FILE" \
+            "$VAULT" server -config "$CONFIG" {{ salt['pillar.get']('vault:extra_options', '') }} >> "$LOG_FILE" &
+        retcode=$?
+        touch /var/lock/subsys/vault
+        return $retcode
+}
+
+stop() {
+        DELAY=5 # seconds maximum to wait for a leave
+
+        echo -n "Shutting down vault: "
+
+        # If acting as a server, use a SIGTERM to avoid a leave.
+        # This behavior is also configurable.  Avoid doing a "leave" because
+        # having servers missing is a bad thing that we want to notice.
+        #
+        # A SIGTERM will mark the node as "failed" until it rejoins.
+        # killproc with no arguments uses TERM, then escalates to KILL.
+        killproc $KILLPROC_OPT $VAULT
+        retcode=$?
+
+        rm -f /var/lock/subsys/vault $PID_FILE
+        return $retcode
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status -p $PID_FILE vault
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    reload)
+        killproc $KILLPROC_OPT $VAULT -HUP
+        ;;
+    condrestart)
+        [ -f /var/lock/subsys/vault ] && restart || :
+        ;;
+    *)
+        echo "Usage: vault {start|stop|status|reload|restart}"
+        exit 1
+        ;;
+esac
+retcode=$?
+# Don't let the [OK] get stomped on.
+echo
+exit $retcode

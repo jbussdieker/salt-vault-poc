@@ -1,0 +1,958 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Salt+Vault POC V1",
+  "Metadata": {
+    "AWS::CloudFormation::Designer": {
+      "82ca3bbc-0a45-4f19-abd3-803624b0d69f": {
+        "size": {
+          "width": 710,
+          "height": 670
+        },
+        "position": {
+          "x": 170,
+          "y": 40
+        },
+        "z": 1,
+        "embeds": [
+          "58cff12c-60d3-40f8-a6f2-1bc8cbc8273a",
+          "cebd75bc-9414-437d-a843-8048a8874485",
+          "edf9c5e7-bf57-4207-84cd-3cb075a5ab9d",
+          "fb49f2b0-d2d2-4f8f-b51d-1034d32abebc",
+          "89fe14d4-2594-4b80-ab30-e83b9ef9a1be",
+          "e1e8b7e6-89ab-4938-8ba2-2aaa0171b8bc",
+          "c876c936-79bc-425d-86ce-796ca619e78a"
+        ]
+      },
+      "4665b1b9-fd37-4175-8b00-ca9d5b52e171": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 70,
+          "y": 220
+        },
+        "z": 1,
+        "embeds": []
+      },
+      "255b44b5-c787-4b53-805d-c15c7178ee19": {
+        "source": {
+          "id": "4665b1b9-fd37-4175-8b00-ca9d5b52e171"
+        },
+        "target": {
+          "id": "82ca3bbc-0a45-4f19-abd3-803624b0d69f"
+        },
+        "z": 1
+      },
+      "c876c936-79bc-425d-86ce-796ca619e78a": {
+        "size": {
+          "width": 260,
+          "height": 210
+        },
+        "position": {
+          "x": 230,
+          "y": 100
+        },
+        "z": 2,
+        "parent": "82ca3bbc-0a45-4f19-abd3-803624b0d69f",
+        "embeds": [
+          "d7c28a5b-d953-475a-899b-7371687dae71"
+        ]
+      },
+      "d7c28a5b-d953-475a-899b-7371687dae71": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 320,
+          "y": 180
+        },
+        "z": 3,
+        "parent": "c876c936-79bc-425d-86ce-796ca619e78a",
+        "embeds": [],
+        "references": [
+          "4665b1b9-fd37-4175-8b00-ca9d5b52e171"
+        ]
+      },
+      "5bf6eeac-76aa-4de9-8ef2-92841870af5c": {
+        "source": {
+          "id": "d7c28a5b-d953-475a-899b-7371687dae71"
+        },
+        "target": {
+          "id": "4665b1b9-fd37-4175-8b00-ca9d5b52e171"
+        },
+        "z": 4
+      },
+      "e1e8b7e6-89ab-4938-8ba2-2aaa0171b8bc": {
+        "size": {
+          "width": 260,
+          "height": 210
+        },
+        "position": {
+          "x": 560,
+          "y": 100
+        },
+        "z": 2,
+        "parent": "82ca3bbc-0a45-4f19-abd3-803624b0d69f",
+        "embeds": [
+          "e9bc1436-b738-436c-8d04-0770c651ee09"
+        ]
+      },
+      "e9bc1436-b738-436c-8d04-0770c651ee09": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 650,
+          "y": 180
+        },
+        "z": 3,
+        "parent": "e1e8b7e6-89ab-4938-8ba2-2aaa0171b8bc",
+        "embeds": [],
+        "isrelatedto": [
+          "58cff12c-60d3-40f8-a6f2-1bc8cbc8273a",
+          "34346a3b-61c8-45cd-af2e-af6517ec4d9d",
+          "edf9c5e7-bf57-4207-84cd-3cb075a5ab9d"
+        ]
+      },
+      "58cff12c-60d3-40f8-a6f2-1bc8cbc8273a": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 370,
+          "y": 330
+        },
+        "z": 2,
+        "parent": "82ca3bbc-0a45-4f19-abd3-803624b0d69f",
+        "embeds": []
+      },
+      "74127dbd-2e60-4237-9f53-9c5d2333db27": {
+        "source": {
+          "id": "c876c936-79bc-425d-86ce-796ca619e78a"
+        },
+        "target": {
+          "id": "e1e8b7e6-89ab-4938-8ba2-2aaa0171b8bc"
+        },
+        "z": 2
+      },
+      "89fe14d4-2594-4b80-ab30-e83b9ef9a1be": {
+        "size": {
+          "width": 260,
+          "height": 210
+        },
+        "position": {
+          "x": 560,
+          "y": 330
+        },
+        "z": 2,
+        "parent": "82ca3bbc-0a45-4f19-abd3-803624b0d69f",
+        "embeds": [
+          "48067249-d3d4-4c2f-92bf-382a9058a8a0"
+        ]
+      },
+      "85153b7c-774c-4ba4-9959-f704cbf2f333": {
+        "source": {
+          "id": "c876c936-79bc-425d-86ce-796ca619e78a"
+        },
+        "target": {
+          "id": "89fe14d4-2594-4b80-ab30-e83b9ef9a1be"
+        },
+        "z": 2
+      },
+      "ce064bba-3f19-43d8-8ba9-0a7c5a09715d": {
+        "size": {
+          "width": 240,
+          "height": 560
+        },
+        "position": {
+          "x": 920,
+          "y": 40
+        },
+        "z": 0,
+        "embeds": [
+          "34346a3b-61c8-45cd-af2e-af6517ec4d9d"
+        ],
+        "isconnectedto": [
+          "e1e8b7e6-89ab-4938-8ba2-2aaa0171b8bc",
+          "89fe14d4-2594-4b80-ab30-e83b9ef9a1be"
+        ]
+      },
+      "48d511a0-e30a-49b0-85c2-a9939d7dded8": {
+        "source": {
+          "id": "ce064bba-3f19-43d8-8ba9-0a7c5a09715d"
+        },
+        "target": {
+          "id": "e1e8b7e6-89ab-4938-8ba2-2aaa0171b8bc"
+        },
+        "z": 4
+      },
+      "e4d75085-48d3-406a-bc05-0a0cc2b1fc80": {
+        "source": {
+          "id": "ce064bba-3f19-43d8-8ba9-0a7c5a09715d"
+        },
+        "target": {
+          "id": "89fe14d4-2594-4b80-ab30-e83b9ef9a1be"
+        },
+        "z": 5
+      },
+      "34346a3b-61c8-45cd-af2e-af6517ec4d9d": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 1010,
+          "y": 100
+        },
+        "z": 1,
+        "parent": "ce064bba-3f19-43d8-8ba9-0a7c5a09715d",
+        "embeds": [],
+        "ismemberof": [
+          "fb49f2b0-d2d2-4f8f-b51d-1034d32abebc"
+        ]
+      },
+      "fb49f2b0-d2d2-4f8f-b51d-1034d32abebc": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 760,
+          "y": 580
+        },
+        "z": 2,
+        "parent": "82ca3bbc-0a45-4f19-abd3-803624b0d69f",
+        "embeds": [],
+        "isrelatedto": [
+          "58cff12c-60d3-40f8-a6f2-1bc8cbc8273a",
+          "edf9c5e7-bf57-4207-84cd-3cb075a5ab9d"
+        ]
+      },
+      "6dcbd3ba-dba1-4e8a-a4d8-75454261fadd": {
+        "source": {
+          "id": "34346a3b-61c8-45cd-af2e-af6517ec4d9d"
+        },
+        "target": {
+          "id": "fb49f2b0-d2d2-4f8f-b51d-1034d32abebc"
+        },
+        "z": 4
+      },
+      "48067249-d3d4-4c2f-92bf-382a9058a8a0": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 650,
+          "y": 400
+        },
+        "z": 3,
+        "parent": "89fe14d4-2594-4b80-ab30-e83b9ef9a1be",
+        "embeds": [],
+        "isrelatedto": [
+          "58cff12c-60d3-40f8-a6f2-1bc8cbc8273a",
+          "e9bc1436-b738-436c-8d04-0770c651ee09",
+          "cebd75bc-9414-437d-a843-8048a8874485"
+        ]
+      },
+      "edf9c5e7-bf57-4207-84cd-3cb075a5ab9d": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 370,
+          "y": 490
+        },
+        "z": 2,
+        "parent": "82ca3bbc-0a45-4f19-abd3-803624b0d69f",
+        "embeds": [],
+        "isrelatedto": [
+          "58cff12c-60d3-40f8-a6f2-1bc8cbc8273a"
+        ]
+      },
+      "cebd75bc-9414-437d-a843-8048a8874485": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 370,
+          "y": 580
+        },
+        "z": 2,
+        "parent": "82ca3bbc-0a45-4f19-abd3-803624b0d69f",
+        "embeds": []
+      }
+    }
+  },
+  "Resources": {
+    "VPC": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "82ca3bbc-0a45-4f19-abd3-803624b0d69f"
+        }
+      }
+    },
+    "InternetGateway": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {},
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "4665b1b9-fd37-4175-8b00-ca9d5b52e171"
+        }
+      }
+    },
+    "VPCGatewayAttachment": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "InternetGatewayId": {
+          "Ref": "InternetGateway"
+        },
+        "VpcId": {
+          "Ref": "VPC"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "255b44b5-c787-4b53-805d-c15c7178ee19"
+        }
+      }
+    },
+    "RouteTable": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "VPC"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "c876c936-79bc-425d-86ce-796ca619e78a"
+        }
+      }
+    },
+    "Route": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "RouteTableId": {
+          "Ref": "RouteTable"
+        },
+        "GatewayId": {
+          "Ref": "InternetGateway"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "d7c28a5b-d953-475a-899b-7371687dae71"
+        }
+      }
+    },
+    "Subnet1": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.1.0/24",
+        "AvailabilityZone": {
+          "Fn::Select": [
+            "0",
+            {
+              "Fn::GetAZs": {
+                "Ref": "AWS::Region"
+              }
+            }
+          ]
+        },
+        "VpcId": {
+          "Ref": "VPC"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "e1e8b7e6-89ab-4938-8ba2-2aaa0171b8bc"
+        }
+      }
+    },
+    "Subnet2": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.2.0/24",
+        "AvailabilityZone": {
+          "Fn::Select": [
+            "1",
+            {
+              "Fn::GetAZs": {
+                "Ref": "AWS::Region"
+              }
+            }
+          ]
+        },
+        "VpcId": {
+          "Ref": "VPC"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "89fe14d4-2594-4b80-ab30-e83b9ef9a1be"
+        }
+      }
+    },
+    "SubnetRouteTableAssociation1": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "RouteTable"
+        },
+        "SubnetId": {
+          "Ref": "Subnet1"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "74127dbd-2e60-4237-9f53-9c5d2333db27"
+        }
+      }
+    },
+    "SubnetRouteTableAssociation2": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "RouteTable"
+        },
+        "SubnetId": {
+          "Ref": "Subnet2"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "85153b7c-774c-4ba4-9959-f704cbf2f333"
+        }
+      }
+    },
+    "DBSubnetGroup": {
+      "Type": "AWS::RDS::DBSubnetGroup",
+      "Properties": {
+        "DBSubnetGroupDescription": "Main Database Subnet Group",
+        "SubnetIds": [
+          {
+            "Ref": "Subnet1"
+          },
+          {
+            "Ref": "Subnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "ce064bba-3f19-43d8-8ba9-0a7c5a09715d"
+        }
+      }
+    },
+    "DBInstance": {
+      "Type": "AWS::RDS::DBInstance",
+      "Properties": {
+        "AllocatedStorage": "10",
+        "DBInstanceClass": {
+          "Ref": "DBInstanceClass"
+        },
+        "Engine": "postgres",
+        "MasterUsername": "salt_dashboard",
+        "MasterUserPassword": "password",
+        "DBSubnetGroupName": {
+          "Ref": "DBSubnetGroup"
+        },
+        "VPCSecurityGroups": [
+          {
+            "Ref": "SaltDashboardDatabaseSecurityGroup"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "34346a3b-61c8-45cd-af2e-af6517ec4d9d"
+        }
+      }
+    },
+    "SaltDashboardDatabaseSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Salt Dashboard Security Group",
+        "VpcId": {
+          "Ref": "VPC"
+        },
+        "SecurityGroupIngress": [
+          {
+            "SourceSecurityGroupId": {
+              "Ref": "SaltMasterSecurityGroup"
+            },
+            "FromPort": "5432",
+            "IpProtocol": "tcp",
+            "ToPort": "5432"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "fb49f2b0-d2d2-4f8f-b51d-1034d32abebc"
+        }
+      }
+    },
+    "SaltMasterInstance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": {
+          "Fn::FindInMap": [
+            "RegionMap",
+            {
+              "Ref": "AWS::Region"
+            },
+            "AMI"
+          ]
+        },
+        "InstanceType": {
+          "Ref": "InstanceType"
+        },
+        "UserData": {
+          "Fn::Base64": {
+            "Fn::Join": [
+              "",
+              [
+                "#!/bin/bash\n",
+                "# Set hostname\n",
+                "hostname salt\n",
+                "\n",
+                "# Salt repo\n",
+                "rpm --import https://repo.saltstack.com/yum/redhat/6/x86_64/latest/SALTSTACK-GPG-KEY.pub\n",
+                "cat >/etc/yum.repos.d/saltstack.repo <<EOS\n",
+                "[saltstack-repo]\n",
+                "name=SaltStack repo for RHEL/CentOS 6\n",
+                "baseurl=https://repo.saltstack.com/yum/redhat/6/\\$basearch/latest\n",
+                "enabled=1\n",
+                "gpgcheck=1\n",
+                "gpgkey=https://repo.saltstack.com/yum/redhat/6/\\$basearch/latest/SALTSTACK-GPG-KEY.pub\n",
+                "EOS\n",
+                "\n",
+                "# Full update\n",
+                "yum clean expire-cache\n",
+                "yum -y update\n",
+                "\n",
+                "# Gitfs dependencies\n",
+                "yum -y install git\n",
+                "\n",
+                "# Salt master\n",
+                "yum -y install salt-master\n",
+                "mkdir -p /etc/salt/master.d\n",
+                "echo \"auto_accept: True\" > /etc/salt/master.d/auto_accept.conf\n",
+                "git clone https://github.com/jbussdieker/salt-vault-poc.git /srv/salt\n",
+                "chkconfig salt-master on\n",
+                "service salt-master start\n",
+                "\n",
+                "# Salt minion\n",
+                "echo \"127.0.0.1 salt\" >> /etc/hosts\n",
+                "yum -y install salt-minion\n",
+                "mkdir -p /etc/salt/minion.d\n",
+                "cat >/etc/salt/minion.d/grains.conf <<EOS\n",
+                "grains:\n",
+                "  roles:\n",
+                "    - salt-master\n",
+                "    - salt-dashboard\n",
+                "  salt-dashboard-db-host: ",
+                {
+                  "Fn::GetAtt": [
+                    "DBInstance",
+                    "Endpoint.Address"
+                  ]
+                },
+                "\n",
+                "EOS\n",
+                "chkconfig salt-minion on\n",
+                "service salt-minion start\n",
+                "\n",
+                "salt-call state.highstate\n",
+                "salt-call state.highstate\n",
+                "salt-call state.highstate --retcode-passthrough\n",
+                "/opt/aws/bin/cfn-signal -e 0 --stack ",
+                {
+                  "Ref": "AWS::StackName"
+                },
+                " --resource SaltMasterInstance --region ",
+                {
+                  "Ref": "AWS::Region"
+                },
+                "\n"
+              ]
+            ]
+          }
+        },
+        "KeyName": {
+          "Ref": "KeyNameSaltMaster"
+        },
+        "NetworkInterfaces": [
+          {
+            "AssociatePublicIpAddress": "true",
+            "DeviceIndex": "0",
+            "SubnetId": {
+              "Ref": "Subnet1"
+            },
+            "GroupSet": [
+              {
+                "Ref": "MainSecurityGroup"
+              },
+              {
+                "Ref": "SaltMasterSecurityGroup"
+              }
+            ]
+          }
+        ]
+      },
+      "CreationPolicy": {
+        "ResourceSignal": {
+          "Timeout": "PT30M"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "e9bc1436-b738-436c-8d04-0770c651ee09"
+        }
+      }
+    },
+    "VaultInstance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": {
+          "Fn::FindInMap": [
+            "RegionMap",
+            {
+              "Ref": "AWS::Region"
+            },
+            "AMI"
+          ]
+        },
+        "InstanceType": {
+          "Ref": "InstanceType"
+        },
+        "UserData": {
+          "Fn::Base64": {
+            "Fn::Join": [
+              "",
+              [
+                "#!/bin/bash\n",
+                "# Set hostname\n",
+                "hostname vault\n",
+                "\n",
+                "# Salt repo\n",
+                "rpm --import https://repo.saltstack.com/yum/redhat/6/x86_64/latest/SALTSTACK-GPG-KEY.pub\n",
+                "cat >/etc/yum.repos.d/saltstack.repo <<EOS\n",
+                "[saltstack-repo]\n",
+                "name=SaltStack repo for RHEL/CentOS 6\n",
+                "baseurl=https://repo.saltstack.com/yum/redhat/6/\\$basearch/latest\n",
+                "enabled=1\n",
+                "gpgcheck=1\n",
+                "gpgkey=https://repo.saltstack.com/yum/redhat/6/\\$basearch/latest/SALTSTACK-GPG-KEY.pub\n",
+                "EOS\n",
+                "\n",
+                "# Full update\n",
+                "yum clean expire-cache\n",
+                "yum -y update\n",
+                "\n",
+                "# Salt minion\n",
+                "echo \"",
+                {
+                  "Fn::GetAtt": [
+                    "SaltMasterInstance",
+                    "PrivateIp"
+                  ]
+                },
+                " salt\" >> /etc/hosts\n",
+                "yum -y install salt-minion\n",
+                "mkdir -p /etc/salt/minion.d\n",
+                "cat >/etc/salt/minion.d/grains.conf <<EOS\n",
+                "grains:\n",
+                "  roles:\n",
+                "    - vault\n",
+                "EOS\n",
+                "chkconfig salt-minion on\n",
+                "service salt-minion start\n",
+                "\n",
+                "salt-call state.highstate\n",
+                "salt-call state.highstate\n",
+                "salt-call state.highstate --retcode-passthrough\n",
+                "/opt/aws/bin/cfn-signal -e 0 --stack ",
+                {
+                  "Ref": "AWS::StackName"
+                },
+                " --resource VaultInstance --region ",
+                {
+                  "Ref": "AWS::Region"
+                },
+                "\n"
+              ]
+            ]
+          }
+        },
+        "KeyName": {
+          "Ref": "KeyNameVault"
+        },
+        "NetworkInterfaces": [
+          {
+            "AssociatePublicIpAddress": "true",
+            "DeviceIndex": "0",
+            "SubnetId": {
+              "Ref": "Subnet2"
+            },
+            "GroupSet": [
+              {
+                "Ref": "MainSecurityGroup"
+              },
+              {
+                "Ref": "VaultSecurityGroup"
+              }
+            ]
+          }
+        ]
+      },
+      "CreationPolicy": {
+        "ResourceSignal": {
+          "Timeout": "PT30M"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "48067249-d3d4-4c2f-92bf-382a9058a8a0"
+        }
+      }
+    },
+    "SaltMasterSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Salt Master Security Group",
+        "VpcId": {
+          "Ref": "VPC"
+        },
+        "SecurityGroupIngress": [
+          {
+            "SourceSecurityGroupId": {
+              "Ref": "MainSecurityGroup"
+            },
+            "FromPort": "4505",
+            "IpProtocol": "tcp",
+            "ToPort": "4506"
+          },
+          {
+            "CidrIp": "0.0.0.0/0",
+            "FromPort": "3000",
+            "IpProtocol": "tcp",
+            "ToPort": "3000"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "edf9c5e7-bf57-4207-84cd-3cb075a5ab9d"
+        }
+      }
+    },
+    "VaultSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Vault Security Group",
+        "VpcId": {
+          "Ref": "VPC"
+        },
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "FromPort": "8080",
+            "IpProtocol": "tcp",
+            "ToPort": "8080"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "cebd75bc-9414-437d-a843-8048a8874485"
+        }
+      }
+    },
+    "MainSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Main Security Group",
+        "VpcId": {
+          "Ref": "VPC"
+        },
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "FromPort": "22",
+            "IpProtocol": "tcp",
+            "ToPort": "22"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "58cff12c-60d3-40f8-a6f2-1bc8cbc8273a"
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "SaltMasterPublicIp": {
+      "Description": "Salt Master Public IP",
+      "Value": {
+        "Fn::GetAtt": [
+          "SaltMasterInstance",
+          "PublicIp"
+        ]
+      }
+    },
+    "SaltDashboard": {
+      "Description": "Salt Dashboard URL",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "SaltMasterInstance",
+                "PublicIp"
+              ]
+            },
+            ":3000/nodes"
+          ]
+        ]
+      }
+    },
+    "VaultPublicIp": {
+      "Description": "Vault Public IP",
+      "Value": {
+        "Fn::GetAtt": [
+          "VaultInstance",
+          "PublicIp"
+        ]
+      }
+    }
+  },
+  "Parameters": {
+    "KeyNameSaltMaster": {
+      "Description": "Select an existing key pair",
+      "Type": "AWS::EC2::KeyPair::KeyName"
+    },
+    "KeyNameVault": {
+      "Description": "Select an existing key pair",
+      "Type": "AWS::EC2::KeyPair::KeyName"
+    },
+    "InstanceType": {
+      "Description": "EC2 instance type",
+      "Type": "String",
+      "ConstraintDescription": "Must be a valid EC2 instance type",
+      "AllowedValues": [
+        "t1.micro",
+        "t2.micro",
+        "t2.small",
+        "t2.medium",
+        "m1.small",
+        "m1.medium",
+        "m1.large",
+        "m1.xlarge",
+        "m2.xlarge",
+        "m2.2xlarge",
+        "m2.4xlarge",
+        "m3.medium",
+        "m3.large",
+        "m3.xlarge",
+        "m3.2xlarge",
+        "c1.medium",
+        "c1.xlarge",
+        "c3.large",
+        "c3.xlarge",
+        "c3.2xlarge",
+        "c3.4xlarge",
+        "c3.8xlarge",
+        "g2.2xlarge",
+        "r3.large",
+        "r3.xlarge",
+        "r3.2xlarge",
+        "r3.4xlarge",
+        "r3.8xlarge",
+        "i2.xlarge",
+        "i2.2xlarge",
+        "i2.4xlarge",
+        "i2.8xlarge",
+        "hi1.4xlarge",
+        "hs1.8xlarge",
+        "cr1.8xlarge",
+        "cc2.8xlarge",
+        "cg1.4xlarge"
+      ],
+      "Default": "m1.small"
+    },
+    "DBInstanceClass": {
+      "Description": "RDS DB instance class",
+      "Type": "String",
+      "ConstraintDescription": "Must be a valid RDS DB instance class",
+      "AllowedValues": [
+        "db.m4.large",
+        "db.m4.xlarge",
+        "db.m4.2xlarge",
+        "db.m4.4xlarge",
+        "db.m4.10xlarge",
+        "db.m3.medium",
+        "db.m3.large",
+        "db.m3.xlarge",
+        "db.m3.2xlarge",
+        "db.r3.large",
+        "db.r3.xlarge",
+        "db.r3.2xlarge",
+        "db.r3.4xlarge",
+        "db.r3.8xlarge",
+        "db.t2.micro",
+        "db.t2.small",
+        "db.t2.medium",
+        "db.t2.large"
+      ],
+      "Default": "db.m3.medium"
+    }
+  },
+  "Mappings": {
+    "RegionMap": {
+      "us-west-2": {
+        "AMI": "ami-d93622b8"
+      },
+      "eu-central-1": {
+        "AMI": "ami-794a5915"
+      },
+      "eu-west-1": {
+        "AMI": "ami-95e33ce6"
+      },
+      "us-east-1": {
+        "AMI": "ami-5fb8c835"
+      },
+      "ap-northeast-1": {
+        "AMI": "ami-393c1957"
+      },
+      "ap-southeast-2": {
+        "AMI": "ami-ced887ad"
+      },
+      "us-west-1": {
+        "AMI": "ami-56ea8636"
+      },
+      "sa-east-1": {
+        "AMI": "ami-7d15ad11"
+      },
+      "ap-southeast-1": {
+        "AMI": "ami-34bd7a57"
+      }
+    }
+  }
+}
